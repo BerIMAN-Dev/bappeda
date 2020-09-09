@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     
-    $login  = mysqli_query($koneksi,"select * from user where username='$username' and password='$password'");
+    $login  = mysqli_query($koneksi,"SELECT * FROM user WHERE username='$username' and password='$password'");
     $cek    = mysqli_num_rows($login);
     $data   = mysqli_fetch_assoc($login);
 
