@@ -37,12 +37,11 @@
                     <!-- ============================================================== -->
                     <a href="javascript:void(0)" class="brand-logo">
                         <span class="icon">
-                            <img class="light-logo" src="../assets/assets/images/logo-light-icon.png">
-                            <img class="dark-logo" src="../assets/assets/images/logo-icon.png">
+                            <img class="light-logo" src="../assets/assets/images/logo.png">
+                            <img class="dark-logo" src="../assets/assets/images/logo.png">
                         </span>
                         <span class="text">
-                            <img class="light-logo" src="../assets/assets/images/logo-light-text.png">
-                            <img class="dark-logo" src="../assets/assets/images/logo-text.png">
+                            <h4 style="color: white;">BAPPEDA</h4>
                         </span>
                     </a>
                     <!-- ============================================================== -->
