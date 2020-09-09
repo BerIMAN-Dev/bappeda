@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
     <!--begin::Head-->
-    <head><base href="../../../">
+    <head>
         <meta charset="utf-8"/>
         <title>Metronic | Record Selection</title>
         <meta name="description" content="Single and group record selection"/>
