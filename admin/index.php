@@ -1,4 +1,10 @@
-<?php include 'inc/header.php' ?>
+<?php 
+include '../inc/adm.php';
+include 'inc/header.php';
+?>
+<?php
+if ($_SESSION['level'] == "admin") {
+?>
 <!--begin::Content-->
 <div class="tab-content">
     <!--begin::Tabpane-->
@@ -2512,4 +2518,9 @@
                     <!--end::Scroll-->
                 </div>
                 <!--end::Body-->
-<?php include 'inc/header.php' ?>
+<?php 
+include 'inc/footer.php'; 
+} else {
+	header('location: index.php');
+}
+?>
