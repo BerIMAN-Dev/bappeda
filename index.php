@@ -59,7 +59,7 @@ include 'inc/guest.php';
 					<h3 class="opacity-40 font-weight-normal">Sign In To Admin</h3>
 					<p class="opacity-40">Enter your details to login to your account:</p>
 				</div>
-				<form class="form" id="kt_login_signin_form" method="POST">
+				<form class="form" method="POST">
 					<div class="form-group">
 						<input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Username" name="username" autocomplete="off"/>
 					</div>
@@ -67,7 +67,7 @@ include 'inc/guest.php';
 						<input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="password" placeholder="Password" name="password"/>
 					</div>
 					<div class="form-group text-center mt-10">
-                        <input type="submit" value="Sign In" id="kt_login_signin_submit" class="btn btn-pill btn-primary opacity-90 px-15 py-3" name="login">
+                        <input type="submit" name="login" value="Sign In" class="btn btn-pill btn-primary opacity-90 px-15 py-3" >
 						<!-- <button id="kt_login_signin_submit" class="btn btn-pill btn-primary opacity-90 px-15 py-3" type="submit" name="login">Sign In</button> -->
 					</div>
 				</form>
