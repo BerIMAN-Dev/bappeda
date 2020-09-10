@@ -139,41 +139,19 @@
                             <a href="javascript: void(0);" ><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
                         </li>
                         <li>
-                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">equalizer</i><span class="hide-menu"> Sidebar Types </span></a>
+                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">library_books</i><span class="hide-menu"> Master Data </span></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="sidebar-type-minisidebar.html"><i class="material-icons">photo_size_select_small</i><span class="hide-menu">Minisidebar</span></a></li>
-                                    <li><a href="sidebar-type-iconbar.html"><i class="material-icons">picture_in_picture</i><span class="hide-menu">Icon Sidebar</span></a></li>
+                                    <li><a href="kawasan.php"><i class="material-icons">adjust</i><span class="hide-menu">Kawasan</span></a></li>
+                                    <li><a href="kecamatan.php"><i class="material-icons">adjust</i><span class="hide-menu">Kecamatan</span></a></li>
+                                    <li><a href="kelompok_umur.php"><i class="material-icons">adjust</i><span class="hide-menu">Kelompok Umur</span></a></li>
+                                    <li><a href="kelurahan.php"><i class="material-icons">adjust</i><span class="hide-menu">Kelurahan</span></a></li>
                                 </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">library_books</i><span class="hide-menu"> Page Layouts </span></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="layout-inner-fixed-left-sidebar.html"><i class="material-icons">format_align_left</i><span class="hide-menu">Inner Fixed Left Sidebar</span></a></li>
-                                    <li><a href="layout-inner-fixed-right-sidebar.html"><i class="material-icons">format_align_right</i><span class="hide-menu">Inner Fixed Right Sidebar</span></a></li>
                             </div>
                         </li>
                         <li class="small-cap"><span class="hide-menu">Apps</span></li>
                         <li>
-                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">move_to_inbox</i><span class="hide-menu"> Inbox</span></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="inbox-email.html"><i class="material-icons">email</i><span class="hide-menu">Email</span></a></li>
-                                    <li><a href="inbox-email-detail.html"><i class="material-icons">markunread_mailbox</i><span class="hide-menu">Email Detail</span></a></li>
-                                    <li><a href="inbox-compose.html"><i class="material-icons">contact_mail</i><span class="hide-menu">Email Compose</span></a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">bookmark_border</i><span class="hide-menu"> Ticket</span></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="ticket-list.html"><i class="material-icons">collections_bookmark</i><span class="hide-menu">Ticket List</span></a></li>
-                                    <li><a href="ticket-detail.html"><i class="material-icons">bookmark</i><span class="hide-menu">Ticket Detail</span></a></li>
-                                </ul>
-                            </div>
+                            <a href="javascript: void(0);" class="collapsible-header"><i class="material-icons">content_paste</i><span class="hide-menu"> Rekap</span></a>
                         </li>
                     </ul>
                 </li>
