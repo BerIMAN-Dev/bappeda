@@ -44,7 +44,7 @@ include 'inc/header.php';
                                             </div>
                                         </div><div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="text" name="luas">
+                                                <input id="full-n" type="number" name="luas">
                                                 <label for="full-n">Luas</label>
                                             </div>
                                         </div>
@@ -88,7 +88,7 @@ include 'inc/header.php';
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="text" name="luas" value="<?=$data['luas'];?>">
+                                                <input id="full-n" type="number" name="luas" value="<?=$data['luas'];?>">
                                                 <label for="full-n">Luas</label>
                                             </div>
                                         </div>

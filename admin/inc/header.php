@@ -136,7 +136,7 @@
                     <ul class="collapsible">
                         <li class="small-cap"><span class="hide-menu">PERSONAL</span></li>
                         <li>
-                            <a href="javascript: void(0);" ><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
+                            <a href="index.php" ><i class="material-icons">dashboard</i><span class="hide-menu"> Dashboard</span></a>
                         </li>
                         <li>
                             <a href="javascript: void(0);" class="collapsible-header has-arrow"><i class="material-icons">library_books</i><span class="hide-menu"> Master Data </span></a>
@@ -151,7 +151,7 @@
                         </li>
                         <li class="small-cap"><span class="hide-menu">Apps</span></li>
                         <li>
-                            <a href="javascript: void(0);" class="collapsible-header"><i class="material-icons">content_paste</i><span class="hide-menu"> Rekap</span></a>
+                            <a href="rekap.php" class="collapsible-header"><i class="material-icons">content_paste</i><span class="hide-menu"> Rekap Data</span></a>
                         </li>
                     </ul>
                 </li>

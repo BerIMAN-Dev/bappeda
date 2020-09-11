@@ -101,4 +101,39 @@ if (isset($_POST['delete-kelurahan'])) {
 	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='kelurahan.php'</script>";
 }
 /*KELURAHAN END*/
+
+/*KELOMPOK UMUR START*/
+if (isset($_POST['tambah-kelompok-umur'])) {
+	$kelompok_umur	= $_POST['kelompok_umur'];
+	$laki_laki		= $_POST['laki_laki'];
+	$perempuan 		= $_POST['perempuan'];
+	$jumlah 		= $_POST['jumlah'];
+	$sex_ratio 		= $_POST['sex_ratio'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"INSERT INTO tbl_klmpkumur VALUES('','$kelompok_umur','$laki_laki','$perempuan','$jumlah','$sex_ratio')");
+	echo "<script>alert('Berhasil Menambahkan Data.');document.location.href='kelompok_umur.php'</script>";
+}
+
+if (isset($_POST['edit-kelompok-umur'])) {
+	$kd_umur		= $_POST['kd_umur'];
+	$kelompok_umur 	= $_POST['kelompok_umur'];
+	$laki_laki		= $_POST['laki_laki'];
+	$perempuan 		= $_POST['perempuan'];
+	$jumlah 		= $_POST['jumlah'];
+	$sex_ratio 		= $_POST['sex_ratio'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"UPDATE tbl_klmpkumur SET kelompok_umur='$kelompok_umur',laki_laki='$laki_laki',perempuan='$perempuan',jumlah='$jumlah',sex_ratio='$sex_ratio' WHERE kd_umur='$kd_umur'");
+	echo "<script>alert('Berhasil Mengedit Data.');document.location.href='kelompok_umur.php'</script>";
+}
+
+if (isset($_POST['delete-kelompok-umur'])) {
+	$kd_umur	 		= $_POST['kd_umur'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"DELETE FROM tbl_klmpkumur WHERE kd_umur='$kd_umur'");
+	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='kelompok_umur.php'</script>";
+}
+/*KELOMPOK UMUR END*/
 ?>
