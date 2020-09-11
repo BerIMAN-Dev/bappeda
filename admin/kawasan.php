@@ -35,7 +35,7 @@ include 'inc/header.php';
                         <div class="card">
                             <div class="card-content">
                                 <h5 class="card-title activator">Tambah Kawasan</h5>
-                                <form>
+                                <form method="post">
                                     <div class="row">
                                         <div class="col s12">
                                             <div class="input-field">
@@ -79,12 +79,6 @@ include 'inc/header.php';
                                             <div class="right">
                                                 <input type="submit" value="Simpan" name="tambah-kawasan" class="btn waves-effect waves-light blue">
                                                 <input type="submit" value="Batal" name="proses-batal" class="btn waves-effect waves-light red">
-                                                <!-- <button class="btn waves-effect waves-light blue" type="submit" name="tambah-kawasan">Simpan
-                                                    <i class="material-icons right">send</i>
-                                                </button> -->
-                                                <!-- <button class="btn waves-effect waves-light red" type="submit" name="proses-batal">Batal
-                                                    <i class="material-icons right">cancel</i>
-                                                </button> -->
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +93,7 @@ include 'inc/header.php';
             <?php
                 } elseif (isset($_POST['proses-edit-kawasan'])) {
                     $kd_kawasan = $_POST['kd_kawasan'];
-                    $sqll       = mysqli_query($koneksi,"SELECT * FROM tbl_kawasan WHERE kd_kawasan='$kd_kawasan'");
+                    $sqll       = mysqli_query($koneksi,"SELECT * FROM tbl_kawasan INNER JOIN tbl_kecamatan ON tbl_kawasan.kd_kecamatan = tbl_kecamatan.kd_kecamatan INNER JOIN tbl_kelurahan ON tbl_kawasan.kd_kelurahan = tbl_kelurahan.kd_kelurahan WHERE kd_kawasan='$kd_kawasan'");
                     while ($data = mysqli_fetch_assoc($sqll)) {
             ?>
             <div class="container-fluid">
@@ -108,12 +102,12 @@ include 'inc/header.php';
                         <div class="card">
                             <div class="card-content">
                                 <h5 class="card-title activator">Edit Kawasan</h5>
-                                <form>
+                                <form method="post">
                                     <div class="row">
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input type="hidden" name="kd_kawasan" value="<?=$data['$kd_kawasan'];?>">
-                                                <input id="full-n" type="text" name="kawasan" value="<?=$data['$kawasan'];?>">
+                                                <input type="hidden" name="kd_kawasan" value="<?=$data['kd_kawasan'];?>">
+                                                <input id="full-n" type="text" name="kawasan" value="<?=$data['kawasan'];?>">
                                                 <label for="full-n">Nama Kawasan</label>
                                             </div>
                                         </div>
@@ -153,8 +147,8 @@ include 'inc/header.php';
                                     <div class="row">
                                         <div class="col s12">
                                             <div class="right">
-                                                <input type="submit" value="Simpan" name="tambah-kawasan" class="btn waves-effect waves-light blue"><i class="material-icons right">send</i>
-                                                <input type="submit" value="Batal" name="proses-batal" class="btn waves-effect waves-light blue"><i class="material-icons right">cancel</i>
+                                                <input type="submit" value="Simpan" name="edit-kawasan" class="btn waves-effect waves-light blue">
+                                                <input type="submit" value="Batal" name="proses-batal" class="btn waves-effect waves-light red">
                                             </div>
                                         </div>
                                     </div>
@@ -179,7 +173,7 @@ include 'inc/header.php';
                         <div class="card">
                             <div class="card-content">
                                 <form action="" method="post">
-                                <input type="submit" value="Tambah Data" name="proses-tambah-kawasan" class="btn waves-effect waves-light indigo"><i class="material-icons">plus</i>
+                                <input type="submit" value="Tambah Data" name="proses-tambah-kawasan" class="btn waves-effect waves-light blue"><i class="material-icons">plus</i>
                                 </form>
                                 <table id="zero_config" class="responsive-table display" style="width:100%">
                                     <thead>

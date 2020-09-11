@@ -11,11 +11,11 @@ if (isset($_POST['logout'])) {
     header("location:index.php");
 }
 
-/*KAWASAN START*/
 if (isset($_POST['proses-batal'])) {
 	$_SESSION['fungsi'] = "view";
 }
 
+/*KAWASAN START*/
 if (isset($_POST['tambah-kawasan'])) {
 	$kawasan 		= $_POST['kawasan'];
 	$kd_kelurahan 	= $_POST['kd_kelurahan'];
@@ -46,5 +46,59 @@ if (isset($_POST['delete-kawasan'])) {
 }
 /*KAWASAN END*/
 
+/*KECAMATAN START*/
+if (isset($_POST['tambah-kecamatan'])) {
+	$nama_kecamatan	= $_POST['nama_kecamatan'];
+	$luas 			= $_POST['luas'];
+	$_SESSION['fungsi'] = "view";
 
+	$sql = mysqli_query($koneksi,"INSERT INTO tbl_kecamatan VALUES('','$nama_kecamatan','$luas')");
+	echo "<script>alert('Berhasil Menambahkan Data.');document.location.href='kecamatan.php'</script>";
+}
+
+if (isset($_POST['edit-kecamatan'])) {
+	$kd_kecamatan	= $_POST['kd_kecamatan'];
+	$nama_kecamatan = $_POST['nama_kecamatan'];
+	$luas 			= $_POST['luas'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"UPDATE tbl_kecamatan SET nama_kecamatan='$nama_kecamatan', luas='$luas' WHERE kd_kecamatan='$kd_kecamatan'");
+	echo "<script>alert('Berhasil Mengedit Data.');document.location.href='kecamatan.php'</script>";
+}
+
+if (isset($_POST['delete-kecamatan'])) {
+	$kd_kecamatan	 	= $_POST['kd_kecamatan'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"DELETE FROM tbl_kecamatan WHERE kd_kecamatan='$kd_kecamatan'");
+	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='kecamatan.php'</script>";
+}
+/*KECAMATAN END*/
+
+/*KELURAHAN START*/
+if (isset($_POST['tambah-kelurahan'])) {
+	$nama_kelurahan		= $_POST['nama_kelurahan'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"INSERT INTO tbl_kelurahan VALUES('','$nama_kelurahan')");
+	echo "<script>alert('Berhasil Menambahkan Data.');document.location.href='kelurahan.php'</script>";
+}
+
+if (isset($_POST['edit-kelurahan'])) {
+	$kd_kelurahan		= $_POST['kd_kelurahan'];
+	$nama_kelurahan 	= $_POST['nama_kelurahan'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"UPDATE tbl_kelurahan SET nama_kelurahan='$nama_kelurahan' WHERE kd_kelurahan='$kd_kelurahan'");
+	echo "<script>alert('Berhasil Mengedit Data.');document.location.href='kelurahan.php'</script>";
+}
+
+if (isset($_POST['delete-kelurahan'])) {
+	$kd_kelurahan	 	= $_POST['kd_kelurahan'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"DELETE FROM tbl_kelurahan WHERE kd_kelurahan='$kd_kelurahan'");
+	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='kelurahan.php'</script>";
+}
+/*KELURAHAN END*/
 ?>
