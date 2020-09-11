@@ -14,10 +14,10 @@ include 'inc/header.php';
             <!-- ============================================================== -->
             <div class="page-titles">
                 <div class="d-flex align-items-center">
-                    <h5 class="font-medium m-b-0">Kelompok Umur</h5>
+                    <h5 class="font-medium m-b-0">Rekap Data</h5>
                     <div class="custom-breadcrumb ml-auto">
                         <a href="#!" class="breadcrumb">Home</a>
-                        <a href="#!" class="breadcrumb">Kelompok Umur</a>
+                        <a href="#!" class="breadcrumb">Rekap Data</a>
                     </div>
                 </div>
             </div>
@@ -27,14 +27,14 @@ include 'inc/header.php';
 
             <!-- TAMBAH START -->
             <?php
-                if (isset($_POST['proses-tambah-kelompok-umur'])) {
+                if (isset($_POST['proses-tambah-rekap'])) {
             ?>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col s12">
                         <div class="card">
                             <div class="card-content">
-                                <h5 class="card-title activator">Tambah Kelompok Umur</h5>
+                                <h5 class="card-title activator">Tambah Rekap Data</h5>
                                 <form method="post">
                                     <div class="row">
                                         <div class="col s12">
@@ -71,7 +71,7 @@ include 'inc/header.php';
                                     <div class="row">
                                         <div class="col s12">
                                             <div class="right">
-                                                <input type="submit" value="Simpan" name="tambah-kelompok-umur" class="btn waves-effect waves-light blue">
+                                                <input type="submit" value="Simpan" name="tambah-rekap" class="btn waves-effect waves-light blue">
                                                 <input type="submit" value="Batal" name="proses-batal" class="btn waves-effect waves-light red">
                                             </div>
                                         </div>
@@ -85,9 +85,9 @@ include 'inc/header.php';
             <!-- TAMBAH END -->
             <!-- EDIT START -->
             <?php
-                } elseif (isset($_POST['proses-edit-kelompok-umur'])) {
-                    $kd_umur = $_POST['kd_umur'];
-                    $sqll       = mysqli_query($koneksi,"SELECT * FROM tbl_klmpkumur WHERE kd_umur='$kd_umur'");
+                } elseif (isset($_POST['proses-edit-rekap'])) {
+                    $kd_rekap = $_POST['kd_rekap'];
+                    $sqll       = mysqli_query($koneksi,"SELECT * FROM tbl_rekap WHERE kd_rekap='$kd_rekap'");
                     while ($data = mysqli_fetch_assoc($sqll)) {
             ?>
             <div class="container-fluid">
@@ -95,12 +95,12 @@ include 'inc/header.php';
                     <div class="col s12">
                         <div class="card">
                             <div class="card-content">
-                                <h5 class="card-title activator">Edit Kelompok Umur</h5>
+                                <h5 class="card-title activator">Edit Rekap Data</h5>
                                 <form method="post">
                                     <div class="row">
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input type="hidden" name="kd_umur" value="<?=$data['kd_umur'];?>">
+                                                <input type="hidden" name="kd_rekap" value="<?=$data['kd_rekap'];?>">
                                                 <input id="full-n" type="text" name="kelompok_umur" value="<?=$data['kelompok_umur'];?>">
                                                 <label for="full-n">Kelompok Umur</label>
                                             </div>
@@ -133,7 +133,7 @@ include 'inc/header.php';
                                     <div class="row">
                                         <div class="col s12">
                                             <div class="right">
-                                                <input type="submit" value="Simpan" name="edit-kelompok-umur" class="btn waves-effect waves-light blue">
+                                                <input type="submit" value="Simpan" name="edit-rekap" class="btn waves-effect waves-light blue">
                                                 <input type="submit" value="Batal" name="proses-batal" class="btn waves-effect waves-light red">
                                             </div>
                                         </div>
@@ -159,35 +159,41 @@ include 'inc/header.php';
                         <div class="card">
                             <div class="card-content">
                                 <form action="" method="post">
-                                <input type="submit" value="Tambah Data" name="proses-tambah-kelompok-umur" class="btn waves-effect waves-light blue"><i class="material-icons">plus</i>
+                                <input type="submit" value="Tambah Data" name="proses-tambah-rekap" class="btn waves-effect waves-light blue"><i class="material-icons">plus</i>
                                 </form>
                                 <table id="zero_config" class="responsive-table display" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>Kelompok Umur</th>
-                                            <th>Laki - Laki</th>
-                                            <th>Perempuan</th>
-                                            <th>Jumlah</th>
-                                            <th>Rasio Jenis Kelamin</th>
+                                            <th>Nama Kawasan</th>
+                                            <th>Nilai 1</th>
+                                            <th>Nilai 2</th>
+                                            <th>Nilai 3</th>
+                                            <th>Nilai 4</th>
+                                            <th>Nilai 5</th>
+                                            <th>Total</th>
+                                            <th>Hasil</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php 
-                                        $sql = mysqli_query($koneksi,"SELECT * FROM tbl_klmpkumur ");
+                                        $sql = mysqli_query($koneksi,"SELECT * FROM tbl_rekap ");
                                         while ($row = mysqli_fetch_assoc($sql)) {
                                     ?>
                                         <tr>
-                                            <td><?=$row['kelompok_umur'];?></td>
-                                            <td><?=$row['laki_laki'];?></td>
-                                            <td><?=$row['perempuan'];?></td>
-                                            <td><?=$row['jumlah'];?></td>
-                                            <td><?=$row['sex_ratio'];?></td>
+                                            <td><?=$row['kd_kawasan'];?></td>
+                                            <td><?=$row['n1'];?></td>
+                                            <td><?=$row['n2'];?></td>
+                                            <td><?=$row['n3'];?></td>
+                                            <td><?=$row['n4'];?></td>
+                                            <td><?=$row['n5'];?></td>
+                                            <td><?=$row['total'];?></td>
+                                            <td><?=$row['hasil'];?></td>
                                             <td>
                                                 <form action="" method="post">
-                                                    <input type="hidden" name="kd_umur" value="<?=$row['kd_umur'];?>">
-                                                    <button type="submit" name="proses-edit-kelompok-umur" class="btn waves-effect waves-light"><i class="material-icons">edit</i></button>
-                                                    <button type="submit" name="delete-kelompok-umur" class="btn waves-effect waves-light red"><i class="material-icons">delete</i></button>
+                                                    <input type="hidden" name="kd_rekap" value="<?=$row['kd_rekap'];?>">
+                                                    <button type="submit" name="proses-edit-rekap" class="btn waves-effect waves-light"><i class="material-icons">edit</i></button>
+                                                    <button type="submit" name="delete-rekap" class="btn waves-effect waves-light red"><i class="material-icons">delete</i></button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -195,11 +201,14 @@ include 'inc/header.php';
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Kelompok Umur</th>
-                                            <th>Laki - Laki</th>
-                                            <th>Perempuan</th>
-                                            <th>Jumlah</th>
-                                            <th>Rasio Jenis Kelamin</th>
+                                            <th>Nama Kawasan</th>
+                                            <th>Nilai 1</th>
+                                            <th>Nilai 2</th>
+                                            <th>Nilai 3</th>
+                                            <th>Nilai 4</th>
+                                            <th>Nilai 5</th>
+                                            <th>Total</th>
+                                            <th>Hasil</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
