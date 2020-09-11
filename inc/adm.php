@@ -136,4 +136,45 @@ if (isset($_POST['delete-kelompok-umur'])) {
 	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='kelompok_umur.php'</script>";
 }
 /*KELOMPOK UMUR END*/
+
+/*REKAP START*/
+if (isset($_POST['tambah-rekap'])) {
+	$kd_kawasan	= $_POST['kd_kawasan'];
+	$n1			= $_POST['n1'];
+	$n2 		= $_POST['n2'];
+	$n3 		= $_POST['n3'];
+	$n4 		= $_POST['n4'];
+	$n5 		= $_POST['n5'];
+	$total 		= $_POST['total'];
+	$hasil 		= $_POST['hasil'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"INSERT INTO tbl_rekap VALUES('','$kd_kawasan','$n1','$n2','$n3','$n4','$n5','$total','$hasil')");
+	echo "<script>alert('Berhasil Menambahkan Data.');document.location.href='rekap.php'</script>";
+}
+
+if (isset($_POST['edit-rekap'])) {
+	$kd_rekap	= $_POST['kd_rekap'];
+	$kd_kawasan = $_POST['kd_kawasan'];
+	$n1			= $_POST['n1'];
+	$n2 		= $_POST['n2'];
+	$n3 		= $_POST['n3'];
+	$n4 		= $_POST['n4'];
+	$n5 		= $_POST['n5'];
+	$total 		= $_POST['total'];
+	$hasil 		= $_POST['hasil'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"UPDATE tbl_rekap SET kd_kawasan='$kd_kawasan',n1='$n1',n2='$n2',n3='$n3',n4='$n4',n5='$n5',total='$total',hasil='$hasil' WHERE kd_rekap='$kd_rekap'");
+	echo "<script>alert('Berhasil Mengedit Data.');document.location.href='rekap.php'</script>";
+}
+
+if (isset($_POST['delete-rekap'])) {
+	$kd_rekap	 		= $_POST['kd_rekap'];
+	$_SESSION['fungsi'] = "view";
+
+	$sql = mysqli_query($koneksi,"DELETE FROM tbl_rekap WHERE kd_rekap='$kd_rekap'");
+	echo "<script>alert('Berhasil Menghapus Data.');document.location.href='rekap.php'</script>";
+}
+/*REKAP END*/
 ?>

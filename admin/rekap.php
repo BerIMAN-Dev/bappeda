@@ -39,32 +39,59 @@ include 'inc/header.php';
                                     <div class="row">
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="text" name="kelompok_umur">
-                                                <label for="full-n">Kelompok Umur</label>
+                                                <select name="kd_kawasan" title="Pilih Data Kawasan">
+                                                    <?php
+                                                        $sqlkawasan = mysqli_query($koneksi,"SELECT * FROM tbl_kawasan");
+                                                        while ($row = mysqli_fetch_assoc($sqlkawasan)) {
+                                                    ?>
+                                                        <option value="<?=$row['kd_kawasan'];?>"><?=$row['kawasan'];?></option>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                </select>
+                                                <label>Nama Kawasan</label>
                                             </div>
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="number" name="laki_laki">
-                                                <label for="full-n">Laki - Laki</label>
+                                                <input id="full-n" type="number" name="n1">
+                                                <label for="full-n">Nilai 1</label>
                                             </div>
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="number" name="perempuan">
-                                                <label for="full-n">Perempuan</label>
+                                                <input id="full-n" type="number" name="n2">
+                                                <label for="full-n">Nilai 2</label>
                                             </div>
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="number" name="jumlah">
-                                                <label for="full-n">Jumlah</label>
+                                                <input id="full-n" type="number" name="n3">
+                                                <label for="full-n">Nilai 3</label>
                                             </div>
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="number" name="sex_ratio">
-                                                <label for="full-n">Rasio Jenis Kelamin</label>
+                                                <input id="full-n" type="number" name="n4">
+                                                <label for="full-n">Nilai 4</label>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="input-field">
+                                                <input id="full-n" type="number" name="n5">
+                                                <label for="full-n">Nilai 5</label>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="input-field">
+                                                <input id="full-n" type="number" name="total">
+                                                <label for="full-n">Total</label>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="input-field">
+                                                <input id="full-n" type="number" name="hasil">
+                                                <label for="full-n">Hasil</label>
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +114,7 @@ include 'inc/header.php';
             <?php
                 } elseif (isset($_POST['proses-edit-rekap'])) {
                     $kd_rekap = $_POST['kd_rekap'];
-                    $sqll       = mysqli_query($koneksi,"SELECT * FROM tbl_rekap WHERE kd_rekap='$kd_rekap'");
+                    $sqll       = mysqli_query($koneksi,"SELECT * FROM tbl_rekap INNER JOIN tbl_kawasan ON tbl_rekap.kd_kawasan = tbl_kawasan.kd_kawasan WHERE kd_rekap='$kd_rekap'");
                     while ($data = mysqli_fetch_assoc($sqll)) {
             ?>
             <div class="container-fluid">
@@ -98,35 +125,63 @@ include 'inc/header.php';
                                 <h5 class="card-title activator">Edit Rekap Data</h5>
                                 <form method="post">
                                     <div class="row">
-                                        <div class="col s12">
+                                    <div class="col s12">
                                             <div class="input-field">
-                                                <input type="hidden" name="kd_rekap" value="<?=$data['kd_rekap'];?>">
-                                                <input id="full-n" type="text" name="kelompok_umur" value="<?=$data['kelompok_umur'];?>">
-                                                <label for="full-n">Kelompok Umur</label>
+                                                <input type="hidden" name="kd_rekap" value="<?=$data['kd_rekap']?>">
+                                                <select name="kd_kawasan" title="Pilih Data Kawasan">
+                                                    <option value="<?=$data['kd_kawasan'];?>"><?=$data['nama_kawasan'];?></option>
+                                                    <?php
+                                                        $sqlkawasan = mysqli_query($koneksi,"SELECT * FROM tbl_kawasan");
+                                                        while ($row = mysqli_fetch_assoc($sqlkawasan)) {
+                                                    ?>
+                                                        <option value="<?=$row['kd_kawasan'];?>"><?=$row['kawasan'];?></option>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                </select>
+                                                <label>Nama Kawasan</label>
                                             </div>
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="number" name="laki_laki" value="<?=$data['laki_laki'];?>">
-                                                <label for="full-n">Laki - Laki</label>
+                                                <input id="full-n" type="number" name="n1" value="<?=$data['n1']?>">
+                                                <label for="full-n">Nilai 1</label>
                                             </div>
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="number" name="perempuan" value="<?=$data['perempuan'];?>">
-                                                <label for="full-n">Perempuan</label>
+                                                <input id="full-n" type="number" name="n2" value="<?=$data['n2']?>">
+                                                <label for="full-n">Nilai 2</label>
                                             </div>
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="number" name="jumlah" value="<?=$data['jumlah'];?>">
-                                                <label for="full-n">Jumlah</label>
+                                                <input id="full-n" type="number" name="n3" value="<?=$data['n3']?>">
+                                                <label for="full-n">Nilai 3</label>
                                             </div>
                                         </div>
                                         <div class="col s12">
                                             <div class="input-field">
-                                                <input id="full-n" type="number" name="sex_ratio" value="<?=$data['sex_ratio'];?>">
-                                                <label for="full-n">Rasio Jenis Kelamin</label>
+                                                <input id="full-n" type="number" name="n4" value="<?=$data['n4']?>">
+                                                <label for="full-n">Nilai 4</label>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="input-field">
+                                                <input id="full-n" type="number" name="n5" value="<?=$data['n5']?>">
+                                                <label for="full-n">Nilai 5</label>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="input-field">
+                                                <input id="full-n" type="number" name="total" value="<?=$data['total']?>">
+                                                <label for="full-n">Total</label>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <div class="input-field">
+                                                <input id="full-n" type="number" name="hasil" value="<?=$data['hasil']?>">
+                                                <label for="full-n">Hasil</label>
                                             </div>
                                         </div>
                                     </div>
@@ -177,11 +232,11 @@ include 'inc/header.php';
                                     </thead>
                                     <tbody>
                                     <?php 
-                                        $sql = mysqli_query($koneksi,"SELECT * FROM tbl_rekap ");
+                                        $sql = mysqli_query($koneksi,"SELECT * FROM tbl_rekap INNER JOIN tbl_kawasan ON tbl_rekap.kd_kawasan = tbl_kawasan.kd_kawasan");
                                         while ($row = mysqli_fetch_assoc($sql)) {
                                     ?>
                                         <tr>
-                                            <td><?=$row['kd_kawasan'];?></td>
+                                            <td><?=$row['kawasan'];?></td>
                                             <td><?=$row['n1'];?></td>
                                             <td><?=$row['n2'];?></td>
                                             <td><?=$row['n3'];?></td>
