@@ -1,8 +1,5 @@
 <?php
 include '../inc/adm.php';
-?>
-<?php
-if ($_SESSION['level'] == "admin") {
 include 'inc/header.php';
 ?>
         <!-- ============================================================== -->
@@ -32,7 +29,7 @@ include 'inc/header.php';
                     <div class="col s12">
                         <div class="card">
                             <div class="card-content">
-                                <h5 class="card-title">Zero Configuration</h5>
+                                <h5 class="card-title">Zero Configuration<?=$_SESSION['username'];?></h5>
                                 <h6 class="card-subtitle">DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function:<code> $().DataTable();</code>. You can refer full documentation from here <a href="https://datatables.net/">Datatables</a></h6>
                                 <table id="zero_config" class="responsive-table display" style="width:100%">
                                     <thead>
@@ -73,7 +70,4 @@ include 'inc/header.php';
             </div>
 <?php
 include 'inc/footer.php';
-} else {
-  header('location: index.php');
-}
 ?>

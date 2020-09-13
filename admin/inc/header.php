@@ -114,7 +114,9 @@
                                 <li role="separator" class="divider"></li>
                                 <li><a href="#"><i class="material-icons">settings</i> Account Setting</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#"><i class="material-icons">power_settings_new</i> Logout</a></li>
+                                <form action="post">
+                                <li> <input type="submit" name="logout" value=" Logout" class="btn-hidden"> </li>
+                                </form>
                             </ul>
                         </li>
                     </ul>
