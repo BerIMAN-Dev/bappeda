@@ -155,6 +155,14 @@
                         <li>
                             <a href="rekap.php" class="collapsible-header"><i class="material-icons">content_paste</i><span class="hide-menu"> Rekap Data</span></a>
                         </li>
+                        <li class="small-cap"><span class="hide-menu">Report</span></li>
+                        <li>
+                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Kawasan Cepat Tumbuh</span></a></li>
+                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Kelompok Umur</span></a></li>
+                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Rendah</span></a></li>
+                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Sedang</span></a></li>
+                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Tinggi</span></a></li>
+                        </li>
                     </ul>
                 </li>
             </ul>
