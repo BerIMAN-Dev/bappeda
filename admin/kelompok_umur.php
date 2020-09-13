@@ -55,7 +55,7 @@ include 'inc/header.php';
                                                 <label for="full-n">Perempuan</label>
                                             </div>
                                         </div>
-                                        <div class="col s12">
+                                        <!-- <div class="col s12">
                                             <div class="input-field">
                                                 <input id="full-n" type="number" name="jumlah">
                                                 <label for="full-n">Jumlah</label>
@@ -66,7 +66,7 @@ include 'inc/header.php';
                                                 <input id="full-n" type="number" name="sex_ratio">
                                                 <label for="full-n">Rasio Jenis Kelamin</label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
@@ -117,7 +117,7 @@ include 'inc/header.php';
                                                 <label for="full-n">Perempuan</label>
                                             </div>
                                         </div>
-                                        <div class="col s12">
+                                        <!-- <div class="col s12">
                                             <div class="input-field">
                                                 <input id="full-n" type="number" name="jumlah" value="<?=$data['jumlah'];?>">
                                                 <label for="full-n">Jumlah</label>
@@ -128,7 +128,7 @@ include 'inc/header.php';
                                                 <input id="full-n" type="number" name="sex_ratio" value="<?=$data['sex_ratio'];?>">
                                                 <label for="full-n">Rasio Jenis Kelamin</label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="col s12">

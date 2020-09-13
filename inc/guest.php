@@ -1,5 +1,6 @@
 <?php
 include 'inc/koneksi.php';
+session_start();
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 
 // login
@@ -8,9 +9,8 @@ if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     
-    $login  = mysqli_query($koneksi,"SELECT * FROM user WHERE username='$username' and password='$password'");
-    $cek    = mysqli_num_rows($login);
-    $data   = mysqli_fetch_array($login);
+    $login  = mysqli_query($koneksi,"SELECT * FROM user WHERE username='$username' AND password='$password'");
+    while($data   = mysqli_fetch_array($login)) {
 
     $_SESSION['id_user']    = $data['id_user'];
     $_SESSION['nama']       = $data['nama'];
@@ -26,4 +26,5 @@ if (isset($_POST['login'])) {
     
         }
     }
+}    
 ?>

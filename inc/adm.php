@@ -5,10 +5,9 @@ include '../inc/koneksi.php';
 
 if (isset($_POST['logout'])) {
     session_start();
-
     session_destroy();
 
-    header("location:index.php");
+    header("location: ../index.php");
 }
 
 if (isset($_POST['proses-batal'])) {
@@ -107,8 +106,8 @@ if (isset($_POST['tambah-kelompok-umur'])) {
 	$kelompok_umur	= $_POST['kelompok_umur'];
 	$laki_laki		= $_POST['laki_laki'];
 	$perempuan 		= $_POST['perempuan'];
-	$jumlah 		= $_POST['jumlah'];
-	$sex_ratio 		= $_POST['sex_ratio'];
+	$jumlah 		= ($laki_laki+$perempuan);
+	$sex_ratio 		= ($laki_laki/$perempuan)*100;
 	$_SESSION['fungsi'] = "view";
 
 	$sql = mysqli_query($koneksi,"INSERT INTO tbl_klmpkumur VALUES('','$kelompok_umur','$laki_laki','$perempuan','$jumlah','$sex_ratio')");
@@ -120,8 +119,8 @@ if (isset($_POST['edit-kelompok-umur'])) {
 	$kelompok_umur 	= $_POST['kelompok_umur'];
 	$laki_laki		= $_POST['laki_laki'];
 	$perempuan 		= $_POST['perempuan'];
-	$jumlah 		= $_POST['jumlah'];
-	$sex_ratio 		= $_POST['sex_ratio'];
+	$jumlah 		= ($laki_laki+$perempuan);
+	$sex_ratio 		= ($laki_laki/$perempuan)*100;
 	$_SESSION['fungsi'] = "view";
 
 	$sql = mysqli_query($koneksi,"UPDATE tbl_klmpkumur SET kelompok_umur='$kelompok_umur',laki_laki='$laki_laki',perempuan='$perempuan',jumlah='$jumlah',sex_ratio='$sex_ratio' WHERE kd_umur='$kd_umur'");
@@ -145,8 +144,16 @@ if (isset($_POST['tambah-rekap'])) {
 	$n3 		= $_POST['n3'];
 	$n4 		= $_POST['n4'];
 	$n5 		= $_POST['n5'];
-	$total 		= $_POST['total'];
-	$hasil 		= $_POST['hasil'];
+	$total 		= $n1+$n2+$n3+$n4+$n5;
+	if ($total<=165){
+		$hasil       = "Rendah";
+	}
+	else if ($total<=234){
+		$hasil       = "Sedang";    
+	}
+	else if ($total<=300){
+		$hasil       = "Tinggi";    
+	}
 	$_SESSION['fungsi'] = "view";
 
 	$sql = mysqli_query($koneksi,"INSERT INTO tbl_rekap VALUES('','$kd_kawasan','$n1','$n2','$n3','$n4','$n5','$total','$hasil')");
@@ -161,8 +168,16 @@ if (isset($_POST['edit-rekap'])) {
 	$n3 		= $_POST['n3'];
 	$n4 		= $_POST['n4'];
 	$n5 		= $_POST['n5'];
-	$total 		= $_POST['total'];
-	$hasil 		= $_POST['hasil'];
+	$total 		= $n1+$n2+$n3+$n4+$n5;
+	if ($total<=165){
+		$hasil       = "Rendah";
+	}
+	else if ($total<=234){
+		$hasil       = "Sedang";    
+	}
+	else if ($total<=300){
+		$hasil       = "Tinggi";    
+	}
 	$_SESSION['fungsi'] = "view";
 
 	$sql = mysqli_query($koneksi,"UPDATE tbl_rekap SET kd_kawasan='$kd_kawasan',n1='$n1',n2='$n2',n3='$n3',n4='$n4',n5='$n5',total='$total',hasil='$hasil' WHERE kd_rekap='$kd_rekap'");

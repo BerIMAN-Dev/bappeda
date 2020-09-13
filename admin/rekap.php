@@ -82,7 +82,7 @@ include 'inc/header.php';
                                                 <label for="full-n">Nilai 5</label>
                                             </div>
                                         </div>
-                                        <div class="col s12">
+                                        <!-- <div class="col s12">
                                             <div class="input-field">
                                                 <input id="full-n" type="number" name="total">
                                                 <label for="full-n">Total</label>
@@ -93,7 +93,7 @@ include 'inc/header.php';
                                                 <input id="full-n" type="number" name="hasil">
                                                 <label for="full-n">Hasil</label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
@@ -172,7 +172,7 @@ include 'inc/header.php';
                                                 <label for="full-n">Nilai 5</label>
                                             </div>
                                         </div>
-                                        <div class="col s12">
+                                        <!-- <div class="col s12">
                                             <div class="input-field">
                                                 <input id="full-n" type="number" name="total" value="<?=$data['total']?>">
                                                 <label for="full-n">Total</label>
@@ -183,7 +183,7 @@ include 'inc/header.php';
                                                 <input id="full-n" type="number" name="hasil" value="<?=$data['hasil']?>">
                                                 <label for="full-n">Hasil</label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
