@@ -157,11 +157,11 @@
                         </li>
                         <li class="small-cap"><span class="hide-menu">Report</span></li>
                         <li>
-                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Kawasan Cepat Tumbuh</span></a></li>
-                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Kelompok Umur</span></a></li>
-                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Rendah</span></a></li>
-                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Sedang</span></a></li>
-                            <li><a href="#" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Tinggi</span></a></li>
+                            <li><a href="../report/RkawasanC.php" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Kawasan Cepat Tumbuh</span></a></li>
+                            <li><a href="../report/Rklmpkumur.php" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Kelompok Umur</span></a></li>
+                            <li><a href="../report/RrekapR.php" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Rendah</span></a></li>
+                            <li><a href="../report/RrekapS.php" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Sedang</span></a></li>
+                            <li><a href="../report/RrekapT.php" class="collapsible-header"><i class="material-icons">receipt</i><span class="hide-menu"> Report Nilai Rekap Tinggi</span></a></li>
                         </li>
                     </ul>
                 </li>
